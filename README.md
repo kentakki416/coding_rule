@@ -7,6 +7,7 @@
 
 ## コメント
 
+```
 1. **コードからすぐに分かることはコメントしない**
 
 1. **コードに対する大切な考えはコメントに記録する(メモ書き）**
@@ -28,9 +29,9 @@
 1. **コメントが正確でない記述量が増えてしまう場合は、実例を用いて簡潔にかく**
 
 1. **コードの意図を書く**
+```
 
-
-
+例１
 ```java
 // 失敗例）profitに新しい値を設定する
 void SetProfit(double profit);
@@ -38,7 +39,7 @@ void SetProfit(double profit);
 // 失敗例）このAccountからprofitを返す
 double GetProfit;
 ```
-
+例２
 ```java
 //　このデータだとハッシュテーブルよりもバイナリツリーの方が40早かった。
 //　左右の比較よりもハッシュの計算コストの方が高い
@@ -48,7 +49,7 @@ double GetProfit;
 //　このクラスは汚くなっている
 //　サブクラス’ResourceNode’を作って整理した方が良いかもしれない。
 ```
-
+例３
 ```java
 NUM_THREADS = 8 // 値は[>=2 * num_processors]で十分
 
@@ -57,7 +58,7 @@ const int MAX_RSS_SUBSCRIPTIONS = 1000;
 
 IMAGE_QUALITY = 0.72; // 0.72ならユーザはファイルサイズと品質の面で妥協できる。
 ```
-
+例４
 ```java
 // メールを送信する外部サービスを呼び出している（１分でタイムアウト）
 void SendEmail(string to, string subject, string body);
@@ -65,12 +66,12 @@ void SendEmail(string to, string subject, string body);
 // 実行時間は（タグの数 * タグの深さの平均）なので、ネストの深さに気を付ける
 def FixBrokenHtml(html);
 ```
-
+例５
 ```java
 // これはビジネスロジックとデータベースをつなぐグルーコードだから、アプリケーションから直接使ってはいけない
 // このクラスは複雑に見えるが、単なるキャッシュであるため、システムのことは感知していない
 ```
-
+例６
 ```java
 //（失敗例）
 // intはCategoryType
@@ -82,12 +83,13 @@ typedef hash_map<int, pair<float, float> >ScoreMap;
 // CategoryType -> (score, weight)
 typedef hash_map<int, pair<float, float> > ScoreMap;
 ```
-
+例７
 ```java
 // データをキャッシュに入れる。だだし、先に"その"サイズをチェックする
 //                          ↓
 // データをキャッシュに入れる。ただし、先に"データ"のサイズをチェックする。
 ```
+例８
 ```java
 // このファイルに含まれる行数を返す（行数というのは曖昧でわかりいくい）
 int CountLines(string filename) {}
@@ -95,7 +97,7 @@ int CountLines(string filename) {}
 // このファイルに含まれる改行文字（'¥n')を数える
 int CountLines(string filename) {}
 ```
-
+例９
 ```java
 // 失敗例：'src'の先頭や末尾にある'chars'を除去する（charsが複数あったら？charsは文字列？・・）
 String Strip(String src, String chars) {}
@@ -103,7 +105,7 @@ String Strip(String src, String chars) {}
 //実例：Strip("abba/a/ba", "ab")は"/a/"を返す
 String Strip(String src, String chars) {}
 ```
-
+例１０
 ```java
 // 失敗例）listを逆順にイテレートする
 for(list<Product>::reverse_iterator it = products.rbegin();it != products.rend(); ++it)
